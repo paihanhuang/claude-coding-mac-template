@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+.venv/
+__pycache__/
+*.pyc
+
+# Build output
+dist/
+build/
+*.egg-info/
+
+# Env / secrets
+.env
+.env.local
+*.local
+
+# OS / editor
+Thumbs.db
+.DS_Store
+.idea/
+.vscode/
+
+# Logs / scratch (proofs are NOT ignored — they are evidence and must be committed)
+*.log
+tmp/
+.cache/
+
+# Claude Code local (machine-specific) settings
+.claude/settings.local.json
