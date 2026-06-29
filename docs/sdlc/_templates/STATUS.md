@@ -24,3 +24,11 @@ State legend: ⬜ pending · 🟡 in-progress · ✅ pass · ❌ fail (see defec
 ## Open defects
 | # | Found by | Routed to | Retry | Status |
 |---|---|---|---|---|
+
+## Outcome metrics (honest signals — never LOC)
+| Metric | Value |
+|---|---|
+| Time to first working result | <e.g. 3h from intake> |
+| Revert rate | <reverts / total commits> |
+| Post-merge fix rate | <fix commits / total commits> |
+| Test count delta | <before → after> |

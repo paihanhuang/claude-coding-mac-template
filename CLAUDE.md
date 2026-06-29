@@ -45,13 +45,14 @@ Each role has an exclusive lessons file `.claude/memory/<role>-lessons.md`.
 - At task start, each role reads its own `.claude/memory/<role>-lessons.md`.
 - At task end, if it made a mistake or a verifier caught one, it appends ONE dated terse line.
 - The orchestrator passes every rejection reason into the offending role so the lesson is recorded.
-- Keep lessons short, deduplicated, pruned. A role reads/writes only its own file.
+- Keep lessons short, deduplicated, pruned: cap ~15 lines per role, keep only recurring/load-bearing lessons, and prune on every append. A role reads/writes only its own file.
 
-## 5. Windows / PowerShell
+## 5. macOS / zsh
 
-- Primary shell is **pwsh**; a Bash tool is also available. Use pwsh-native commands + Windows paths
-  in subagent instructions. Capture test output to proof files (naming in the `vmodel` skill).
-- Superpowers hooks dispatch to **Git Bash**; keep Git for Windows installed.
+- Primary shell is **zsh** (bash also available). Use POSIX-shell commands + absolute Unix paths
+  (`/Users/...`) in subagent instructions. Capture test output to proof files (naming in the `vmodel` skill).
+- Superpowers hooks run on the system shell directly — no Git Bash needed. Keep `git` on PATH
+  (Xcode Command Line Tools or Homebrew).
 
 ## 6. Research / analysis tasks
 

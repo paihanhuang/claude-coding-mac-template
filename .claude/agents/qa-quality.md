@@ -24,7 +24,7 @@ add-on avoid degrading already-completed modules?
 
 ### VERIFY mode (after the engineer implements)
 - Default verdict is **FAIL**. Only PASS with measured evidence.
-- Run the benchmarks (pwsh on Windows). Capture **before/after** where a regression is possible.
+- Run the benchmarks. Capture **before/after** where a regression is possible.
 - Compare measured numbers against the budgets. A miss is a FAIL.
 - Save proofs: `..._<aspect=quality>_<result>_before.json` / `_after.json` and any benchmark logs.
 

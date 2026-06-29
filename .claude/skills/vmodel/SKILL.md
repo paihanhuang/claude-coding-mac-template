@@ -6,7 +6,7 @@ description: The full SDLC V-model pipeline contract for this project, layered o
 # V-Model pipeline (detailed contract)
 
 Load this when CLAUDE.md's task-sizing puts a task in the **Small** or **Big** tier. Trivial tasks skip it.
-Roles, principles, tiers, the memory protocol, and Windows conventions live in `CLAUDE.md` — this file is the procedure.
+Roles, principles, tiers, the memory protocol, and shell/path conventions live in `CLAUDE.md` — this file is the procedure.
 
 ## Flow (Big tier)
 
@@ -55,6 +55,7 @@ Every rejection reason is passed into the offending role's next invocation and a
 - Ground verdicts in **deterministic signals**: qa-function → test pass/fail logs; qa-quality → measured
   numbers vs budget; qa-principle → a concrete `git diff` audit. Never vibes.
 - Generator ≠ verifier: the engineer never signs off its own work.
+- **Big tier:** add an independent second-opinion review from a *different model/agent* than the implementer (e.g. the `code-review` skill or a reviewer subagent on another model tier) — a separate verifier catches what the generator is blind to.
 - Reject test-gaming: deleted assertions, equality overloads, early `exit(0)`, tests never observed to fail (RED).
 
 ## Artifacts, traceability & proofs

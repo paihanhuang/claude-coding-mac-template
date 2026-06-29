@@ -23,10 +23,11 @@ Your concern is **functionality**: does the deliverable do what was specified, w
 
 ### VERIFY mode (after the engineer implements)
 - Default verdict is **FAIL**. Only PASS with evidence.
-- Run the test suite (pwsh on Windows). Confirm every acceptance criterion has a test that
+- Run the test suite. Confirm every acceptance criterion has a test that
   was observed to FAIL before implementation (RED→GREEN). Reject test-gaming: deleted assertions,
   `__eq__`/equality overloads, early `exit(0)`, tests that never could have failed.
 - Run the **full** suite to prove **no regression** in previously completed modules.
+- For deliverables with runtime behavior, verify in a **real environment** — use the `run`/`verify` skills to launch the app and observe actual behavior (output/screenshot), not just unit logs; attach that as a proof.
 - Save the test output as a proof: `docs/sdlc/<feature>/proofs/<feature>_<level>_function_<result>_<sha>.xml`
   (prefer JUnit XML or machine-readable).
 

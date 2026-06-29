@@ -15,7 +15,6 @@ build/
 *.local
 
 # OS / editor
-Thumbs.db
 .DS_Store
 .idea/
 .vscode/

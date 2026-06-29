@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "pwsh -NoProfile -Command \"Write-Output ('Branch: ' + (git branch --show-current 2>$null) + ' | V-model contract active: size the task first, then load the vmodel skill for small/big coding tasks.')\""
+            "command": "echo \"Branch: $(git branch --show-current 2>/dev/null) | V-model contract active: size the task first, then load the vmodel skill for small/big coding tasks.\""
           }
         ]
       }
