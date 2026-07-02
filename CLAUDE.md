@@ -17,6 +17,10 @@ State the tier out loud, then run the smallest pipeline that fits. When in doubt
 | **Small** | one module, low blast radius, clear spec | load `vmodel` skill → mini-spec → engineer (TDD) → qa-function + qa-principle |
 | **Big** | new subsystem, cross-cutting, ambiguous, high blast radius | load `vmodel` skill → full V pipeline |
 
+**Blast-radius override:** if a change touches shared / high-fan-in code — a symbol imported by ≥2 modules,
+shared state / config / schema, or a package's public entrypoint — size **up one tier**. This override is the
+exception, not the rule; if it fires on most of a feature's tasks, the threshold is miscalibrated — raise it.
+
 ## 2. Principles (non-negotiable)
 
 - **Minimalistic design** — no nice-to-have / speculative / dead code. Every line serves a requirement.

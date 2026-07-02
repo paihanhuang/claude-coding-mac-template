@@ -7,3 +7,4 @@ and confirmed-good practices. Deduplicate and prune. Format: `- YYYY-MM-DD: <les
 
 ## Lessons
 - 2026-06-18: (seed) TDD: write the test, watch it FAIL, then minimal code to GREEN. Surgical diff only — never touch unrelated code.
+- 2026-07-01: A "no-regression" check must name the real detection mechanism, not a proxy — a count-based weakened-test rule missed predicate broadening (`==` → `in (...)`); hand-run the flagship scenario against the literal mechanism before claiming closure.

@@ -28,7 +28,8 @@ custom audit that protects the user's two non-negotiables:
 - Default verdict is **FAIL**. Only PASS with a concrete diff audit.
 - Run `git diff` (and `git diff --stat`) for the change. Audit every hunk:
   - Flag code that is not required by any acceptance criterion (nice-to-have / speculative).
-  - Flag changes to files or lines unrelated to the task (scope creep / collateral edits).
+  - Flag changes to files or lines unrelated to the task (scope creep / collateral edits) — where
+    `qa-function` supplied a blast-radius list, anything touched outside it is unplanned by definition.
   - Flag dead code, unused exports, premature generalization, needless config.
   - Confirm the diff is the smallest that satisfies the requirements.
 

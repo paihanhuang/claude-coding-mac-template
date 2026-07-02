@@ -26,6 +26,8 @@ add-on avoid degrading already-completed modules?
 - Default verdict is **FAIL**. Only PASS with measured evidence.
 - Run the benchmarks. Capture **before/after** where a regression is possible.
 - Compare measured numbers against the budgets. A miss is a FAIL.
+- For the final integration gate, baseline against the **integrated** branch, not a per-task worktree, so
+  cross-task performance regressions are visible.
 - Save proofs: `..._<aspect=quality>_<result>_before.json` / `_after.json` and any benchmark logs.
 
 ## Output (VERIFY mode)

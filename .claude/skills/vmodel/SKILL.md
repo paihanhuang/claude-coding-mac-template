@@ -20,10 +20,19 @@ Roles, principles, tiers, the memory protocol, and shell/path conventions live i
    ══ GATE 2 (human): approve final architecture ══   (added by this contract — do NOT implement before it)
 4. PER TASK (subagent-driven-development, worktree-isolated):
    a. engineer implements — TDD RED→GREEN, surgical diff only
-   b. auto-verify (sampled audit): qa-function ∥ qa-quality ∥ qa-principle (adversarial)
+   b. auto-verify: the deterministic signal (tests green, budgets met, clean diff) gates **every** task; the
+      adversarial QA agents (qa-function ∥ qa-quality ∥ qa-principle) additionally audit a **sample** of
+      low-risk tasks — *"sampled" = a fraction of tasks get the deeper adversarial pass; the rest auto-gate on
+      the signal alone.* **Never sampled — always the full qa-function pass (qa-function is the regression gate;
+      qa-quality/qa-principle stay sampled): any task that trips the `CLAUDE.md` §1 blast-radius override.** This
+      pass first **refines the feature's blast-radius list for the task's diff** (qa-function DESIGN-mode
+      method) before applying the VERIFY checks.
    c. fail → defect routing (below) → re-dispatch (retry cap 3); record lesson in role memory
    d. write proof-of-pass to docs/sdlc/<feature>/proofs/; update traceability.md + STATUS.md
-5. finishing-a-development-branch
+5. **Integration regression gate (before finish):** on the *integrated* branch (not a per-task worktree), run
+   the designated regression suite + the union of the feature's declared blast-radius behaviors; qa-quality
+   re-baselines its budgets against this integrated branch. Any failure blocks finish and routes per the table.
+6. finishing-a-development-branch
    ══ GATE 3 (human): final acceptance / merge ══   (Superpowers already presents this)
 ```
 
@@ -56,7 +65,7 @@ Every rejection reason is passed into the offending role's next invocation and a
   numbers vs budget; qa-principle → a concrete `git diff` audit. Never vibes.
 - Generator ≠ verifier: the engineer never signs off its own work.
 - **Big tier:** add an independent second-opinion review from a *different model/agent* than the implementer (e.g. the `code-review` skill or a reviewer subagent on another model tier) — a separate verifier catches what the generator is blind to.
-- Reject test-gaming: deleted assertions, equality overloads, early `exit(0)`, tests never observed to fail (RED).
+- Reject test-gaming: deleted assertions, assertions **broadened/loosened** (strict `==` → range/superset/tolerance, a hard assert wrapped in try/except, a real call replaced by a stub), equality overloads, early `exit(0)`, tests never observed to fail (RED).
 
 ## Artifacts, traceability & proofs
 
@@ -64,7 +73,7 @@ Per feature under `docs/sdlc/<feature-slug>/` (templates in `docs/sdlc/_template
 `requirements.md`, `design.md`, `tasks.md`, `traceability.md`, `STATUS.md`, `proofs/`.
 
 **Proof naming:** `<feature>_<level>_<aspect>_<result>_<sha-or-phase>.<ext>` — e.g.
-`auth_unit_function_pass_a1b2c3d.xml`, `auth_system_quality_pass_before.json` / `_after.json`.
+`auth_unit_function_pass_a1b2c3d.xml` (or `_function_pass_before.xml` / `_after.xml` for the regression pair), `auth_system_quality_pass_before.json` / `_after.json`.
 `level` ∈ {unit, integration, system, acceptance}; `aspect` ∈ {function, quality, principle}.
 Prefer machine-readable formats (JUnit XML, JSON). Every acceptance criterion must trace to a passing
 test + proof before Gate 3. Proofs are committed (not git-ignored).

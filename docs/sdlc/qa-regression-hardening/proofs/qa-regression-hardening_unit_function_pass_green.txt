@@ -1,0 +1,33 @@
+=== GREEN CHECK (2026-07-02T03:22:15Z) — expect PRESENT for every directive ===
+PRESENT ✓ .claude/agents/qa-function.md :: Blast-radius list
+PRESENT ✓ .claude/agents/qa-function.md :: cross-check
+PRESENT ✓ .claude/agents/qa-function.md :: characterization test
+PRESENT ✓ .claude/agents/qa-function.md :: whether or
+PRESENT ✓ .claude/agents/qa-function.md :: regression baseline
+PRESENT ✓ .claude/agents/qa-function.md :: deleted, skipped, or weakened
+PRESENT ✓ .claude/agents/qa-function.md :: Escaped-regression protocol
+PRESENT ✓ .claude/agents/qa-function.md :: Keep that test permanently
+PRESENT ✓ .claude/skills/vmodel/SKILL.md :: Never sampled
+PRESENT ✓ .claude/skills/vmodel/SKILL.md :: sampled" =
+PRESENT ✓ .claude/skills/vmodel/SKILL.md :: Integration regression gate
+PRESENT ✓ .claude/skills/vmodel/SKILL.md :: _function_pass_before.xml
+PRESENT ✓ CLAUDE.md :: Blast-radius override
+PRESENT ✓ CLAUDE.md :: public entrypoint
+PRESENT ✓ .claude/agents/qa-quality.md :: integrated** branch
+PRESENT ✓ .claude/agents/qa-principle.md :: anything touched outside it is unplanned
+
+=== old AC-3 line must be GONE (expect 0) ===
+count: 0
+
+=== vmodel step integrity ===
+GATE 3 occurrences (expect 1): 1
+finishing-a-development-branch in flow as step 6 (expect 1): 1
+duplicate '5. finishing' regressions (expect 0): 0
+
+=== AFTER sizes vs prompt-growth soft ceiling (~90 lines/agent) ===
+      72     716 .claude/agents/qa-function.md
+      77     724 .claude/skills/vmodel/SKILL.md
+      65     621 CLAUDE.md
+      44     314 .claude/agents/qa-quality.md
+      46     385 .claude/agents/qa-principle.md
+     304    2760 total

@@ -1,0 +1,28 @@
+=== D1 FIX GREEN RE-CHECK (2026-07-02T03:38:13Z) ===
+-- AC-3 predicate-broadening mechanism now named --
+PRESENT ✓ .claude/agents/qa-function.md :: no assertion is broadened
+PRESENT ✓ .claude/skills/vmodel/SKILL.md :: broadened/loosened
+PRESENT ✓ docs/sdlc/qa-regression-hardening/design.md :: no assertion is broadened
+-- process-gap trigger (AC-1/AC-2) + qa-function-only clarifier now wired --
+PRESENT ✓ .claude/skills/vmodel/SKILL.md :: refines the feature's blast-radius list for the task's diff
+PRESENT ✓ .claude/skills/vmodel/SKILL.md :: qa-function is the regression gate
+-- minor: task-1 ambiguity reworded; topic sentence removed --
+PRESENT ✓ .claude/agents/qa-function.md :: blocking the current task indefinitely
+ABSENT  ✓ .claude/agents/qa-function.md :: Treat every escaped regression as permanent protection
+
+=== size still under 90-line ceiling ===
+      73 .claude/agents/qa-function.md
+      79 .claude/skills/vmodel/SKILL.md
+     152 total
+
+=== AC-7 still surgical (expect same 6 tracked files) ===
+.claude/agents/qa-function.md
+.claude/agents/qa-principle.md
+.claude/agents/qa-quality.md
+.claude/memory/qa-function-lessons.md
+.claude/memory/qa-principle-lessons.md
+.claude/memory/qa-quality-lessons.md
+.claude/skills/vmodel/SKILL.md
+CLAUDE.md
+-- no new untracked outside feature dir --
+?? docs/sdlc/qa-regression-hardening/

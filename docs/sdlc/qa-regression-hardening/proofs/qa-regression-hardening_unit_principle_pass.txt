@@ -1,0 +1,15 @@
+=== AC-7 minimalism audit (2026-07-02T03:22:19Z) ===
+--- modified tracked files (expect ONLY the 5 harness files) ---
+ .claude/agents/qa-function.md        | 29 ++++++++++++++++++++++++++++-
+ .claude/agents/qa-principle.md       |  3 ++-
+ .claude/agents/qa-quality.md         |  2 ++
+ .claude/memory/qa-quality-lessons.md |  1 +
+ .claude/skills/vmodel/SKILL.md       | 13 ++++++++++---
+ CLAUDE.md                            |  4 ++++
+ 6 files changed, 47 insertions(+), 5 deletions(-)
+--- new model: lines in agent files (expect none) ---
+(none — good)
+--- hooks touched? (expect none) ---
+(above two empty = good)
+--- untracked (expect only docs/sdlc/qa-regression-hardening/) ---
+?? docs/sdlc/qa-regression-hardening/
